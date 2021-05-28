@@ -222,7 +222,7 @@ public class CadProduto extends javax.swing.JFrame {
                     + "Valor Unitário: " + jTVUni.getText() + "\n"
                     + "Valor Total: " + jTVTotal.getText();
 
-            JOptionPane.showMessageDialog(this, "Produto Cadastrado com Sucesso!");
+            JOptionPane.showMessageDialog(this, "Produto Cadastrado com Sucesso!\n" + dados);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Preencha os Campos Corretamente!");
         }
