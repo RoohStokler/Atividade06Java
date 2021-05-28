@@ -13,34 +13,35 @@ import Objetos.Produto;
  * @author Stokler
  */
 public class Formulario extends javax.swing.JFrame {
+
     Fornecedor forn = new Fornecedor();
     Produto prod = new Produto();
-    
+
     /**
      * Creates new form Formulario
      */
     public Formulario() {
         initComponents();
     }
-    
+
     public Formulario(Fornecedor forn, Produto prod) {
         initComponents();
         this.forn = forn;
         this.prod = prod;
-        
+
         jLFornecedor.setText(prod.getFornecedor());
         jLNome.setText(prod.getNome());
         jLDescricao.setText(prod.getDescricao());
         jLQuantidade.setText(String.valueOf(prod.getQuantidade()));
         jLVUni.setText(String.valueOf(prod.getVUni()));
         jLVTotal.setText(String.valueOf(prod.getVTotal()));
-        
+
         jLRSocial.setText(forn.getRSocial());
         jLCnpj.setText(forn.getCnpj());
         jLRepresentante.setText(forn.getRepresentante());
         jLEndereco.setText(forn.getEndereco());
         jLTelefone.setText(forn.getTelefone());
-        
+
     }
 
     /**
