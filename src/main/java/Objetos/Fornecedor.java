@@ -86,6 +86,14 @@ public class Fornecedor {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public String getRSocial() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getRepresentante() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

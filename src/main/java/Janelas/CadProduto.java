@@ -5,17 +5,27 @@
  */
 package Janelas;
 
+import Objetos.Produto;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Stokler
  */
 public class CadProduto extends javax.swing.JFrame {
 
+    Produto prod = new Produto();
+
     /**
      * Creates new form CadProduto
      */
     public CadProduto() {
         initComponents();
+    }
+
+    public CadProduto(Produto prod) {
+        initComponents();
+        this.prod = prod;
     }
 
     /**
@@ -35,16 +45,16 @@ public class CadProduto extends javax.swing.JFrame {
         jLFornecedor = new javax.swing.JLabel();
         jLVUni = new javax.swing.JLabel();
         jLVTotal = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        jTNome = new javax.swing.JTextField();
+        jTDescricao = new javax.swing.JTextField();
+        jTQuantidade = new javax.swing.JTextField();
+        jTFornecedor = new javax.swing.JTextField();
+        jTVUni = new javax.swing.JTextField();
+        jTVTotal = new javax.swing.JTextField();
         jBCadProduto = new javax.swing.JButton();
         jBLProduto = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLCadProduto.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLCadProduto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -68,54 +78,72 @@ public class CadProduto extends javax.swing.JFrame {
         jLVTotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLVTotal.setText("Valor Total");
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTNome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTDescricao.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTQuantidade.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTFornecedor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTVUni.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTVTotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jBCadProduto.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jBCadProduto.setText("Cadastrar");
+        jBCadProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCadProdutoActionPerformed(evt);
+            }
+        });
 
         jBLProduto.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jBLProduto.setText("Limpar");
+        jBLProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBLProdutoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLVTotal)
-                    .addComponent(jLVUni)
-                    .addComponent(jLFornecedor)
-                    .addComponent(jLQuantidade)
-                    .addComponent(jLDescricao)
-                    .addComponent(jLNome))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField1)
-                        .addComponent(jTextField2)
-                        .addComponent(jTextField3)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(273, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBCadProduto)
                 .addGap(73, 73, 73)
                 .addComponent(jBLProduto)
                 .addGap(61, 61, 61))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLVTotal)
+                            .addComponent(jLVUni)
+                            .addComponent(jLQuantidade)
+                            .addComponent(jLDescricao)
+                            .addComponent(jLNome))
+                        .addGap(33, 33, 33))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLFornecedor)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTNome, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                                .addComponent(jTDescricao))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTVUni, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTVTotal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
+                            .addComponent(jTQuantidade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jTFornecedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,27 +151,27 @@ public class CadProduto extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLNome)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLDescricao)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLQuantidade)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLFornecedor)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLQuantidade)
+                    .addComponent(jTQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLVUni)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTVUni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLVTotal)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTVTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBCadProduto)
@@ -176,6 +204,40 @@ public class CadProduto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadProdutoActionPerformed
+
+        try {
+            prod.setDescricao(jTDescricao.getText());
+            prod.setFornecedor(jTFornecedor.getText());
+            prod.setNome(jTNome.getText());
+            prod.setQuantidade(Double.parseDouble(jTQuantidade.getText()));
+            prod.setValorUni(Double.parseDouble(jTVUni.getText()));
+            prod.setValorTotal(Double.parseDouble(jTVTotal.getText()));
+
+            String dados = "\n" + "Fornecedor: " + jTFornecedor.getText() + " \n"
+                    + "Nome do Produto: " + jTNome.getText() + "\n"
+                    + "Descrição: " + jTDescricao.getText() + "\n"
+                    + "Quantidade: " + jTQuantidade.getText() + "\n"
+                    + "Valor Unitário: " + jTVUni.getText() + "\n"
+                    + "Valor Total: " + jTVTotal.getText();
+
+            JOptionPane.showMessageDialog(this, "Produto Cadastrado com Sucesso!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Preencha os Campos Corretamente!");
+        }
+    }//GEN-LAST:event_jBCadProdutoActionPerformed
+
+    private void jBLProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLProdutoActionPerformed
+
+        jTDescricao.setText("");
+        jTFornecedor.setText("");
+        jTNome.setText("");
+        jTQuantidade.setText("");
+        jTVUni.setText("");
+        jTVTotal.setText("");
+
+    }//GEN-LAST:event_jBLProdutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,11 +285,11 @@ public class CadProduto extends javax.swing.JFrame {
     private javax.swing.JLabel jLVTotal;
     private javax.swing.JLabel jLVUni;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTDescricao;
+    private javax.swing.JTextField jTFornecedor;
+    private javax.swing.JTextField jTNome;
+    private javax.swing.JTextField jTQuantidade;
+    private javax.swing.JTextField jTVTotal;
+    private javax.swing.JTextField jTVUni;
     // End of variables declaration//GEN-END:variables
 }

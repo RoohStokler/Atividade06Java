@@ -13,8 +13,8 @@ public class Produto {
     
     private String nome;
     private String descricao;
-    private String quantidade;
     private String fornecedor;
+    private double quantidade;
     private double ValorUni;
     private double ValorTotal;
 
@@ -49,14 +49,14 @@ public class Produto {
     /**
      * @return the quantidade
      */
-    public String getQuantidade() {
+    public double getQuantidade() {
         return quantidade;
     }
 
     /**
      * @param quantidade the quantidade to set
      */
-    public void setQuantidade(String quantidade) {
+    public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
     }
 
@@ -100,6 +100,14 @@ public class Produto {
      */
     public void setValorTotal(double ValorTotal) {
         this.ValorTotal = ValorTotal;
+    }
+
+    public Object getVUni() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getVTotal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

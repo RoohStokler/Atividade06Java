@@ -5,12 +5,19 @@
  */
 package Janelas;
 
+import Objetos.Fornecedor;
+import Objetos.Produto;
+
 /**
  *
  * @author Stokler
  */
 public class Principal extends javax.swing.JFrame {
-
+    
+    Fornecedor forn = new Fornecedor();
+    Produto prod = new Produto();
+    
+    
     /**
      * Creates new form Principal
      */
@@ -32,18 +39,22 @@ public class Principal extends javax.swing.JFrame {
         jBCadFornecedor = new javax.swing.JButton();
         jPCadPro = new javax.swing.JPanel();
         jBCadProduto = new javax.swing.JButton();
-        jBMFornecedor = new javax.swing.JButton();
-        jBMProduto = new javax.swing.JButton();
+        jBFormulario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLCadFornecedor.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLCadFornecedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLCadFornecedor.setText("Fornecedor e Produto");
+        jLCadFornecedor.setText("Cadastro");
 
         jPCadFor.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro Fornecedor"));
 
         jBCadFornecedor.setText("Cadastrar Fornecedor");
+        jBCadFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCadFornecedorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPCadForLayout = new javax.swing.GroupLayout(jPCadFor);
         jPCadFor.setLayout(jPCadForLayout);
@@ -65,6 +76,11 @@ public class Principal extends javax.swing.JFrame {
         jPCadPro.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro Produto"));
 
         jBCadProduto.setText("Cadastrar Produto");
+        jBCadProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCadProdutoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPCadProLayout = new javax.swing.GroupLayout(jPCadPro);
         jPCadPro.setLayout(jPCadProLayout);
@@ -83,9 +99,12 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jBMFornecedor.setText("Mostrar Fornecedor");
-
-        jBMProduto.setText("Mostrar Produto");
+        jBFormulario.setText("Formulário");
+        jBFormulario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBFormularioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,14 +120,12 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPCadFor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPCadPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(jBMFornecedor)
-                        .addGap(96, 96, 96)
-                        .addComponent(jBMProduto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)))
+                        .addGap(0, 20, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jBFormulario)
+                .addGap(261, 261, 261))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,15 +136,28 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jPCadFor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
                 .addComponent(jPCadPro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBMFornecedor)
-                    .addComponent(jBMProduto))
-                .addGap(55, 55, 55))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addComponent(jBFormulario)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBCadFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadFornecedorActionPerformed
+        CadFornecedor cf = new CadFornecedor(forn);
+        cf.setVisible(true);
+    }//GEN-LAST:event_jBCadFornecedorActionPerformed
+
+    private void jBCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadProdutoActionPerformed
+        CadProduto cp = new CadProduto(prod);
+        cp.setVisible(true);
+    }//GEN-LAST:event_jBCadProdutoActionPerformed
+
+    private void jBFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBFormularioActionPerformed
+        Formulario fo = new Formulario (forn, prod);
+        fo.setVisible(true);
+    }//GEN-LAST:event_jBFormularioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,8 +197,7 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBCadFornecedor;
     private javax.swing.JButton jBCadProduto;
-    private javax.swing.JButton jBMFornecedor;
-    private javax.swing.JButton jBMProduto;
+    private javax.swing.JButton jBFormulario;
     private javax.swing.JLabel jLCadFornecedor;
     private javax.swing.JPanel jPCadFor;
     private javax.swing.JPanel jPCadPro;

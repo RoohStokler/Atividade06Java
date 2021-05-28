@@ -35,17 +35,15 @@
                           <Component id="jPCadFor" max="32767" attributes="0"/>
                           <Component id="jPCadPro" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                      <Component id="jBMFornecedor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                      <Component id="jBMProduto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="98" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="jBFormulario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="261" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -58,12 +56,9 @@
               <Component id="jPCadFor" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               <Component id="jPCadPro" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="127" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jBMFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBMProduto" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <Component id="jBFormulario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,7 +70,7 @@
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Fornecedor e Produto"/>
+        <Property name="text" type="java.lang.String" value="Cadastro"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="jPCadFor">
@@ -112,6 +107,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar Fornecedor"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBCadFornecedorActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -149,18 +147,19 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar Produto"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBCadProdutoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jBMFornecedor">
+    <Component class="javax.swing.JButton" name="jBFormulario">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mostrar Fornecedor"/>
+        <Property name="text" type="java.lang.String" value="Formul&#xe1;rio"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jBMProduto">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Mostrar Produto"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBFormularioActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
