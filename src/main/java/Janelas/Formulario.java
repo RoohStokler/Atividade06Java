@@ -28,7 +28,12 @@ public class Formulario extends javax.swing.JFrame {
         initComponents();
         this.forn = forn;
         this.prod = prod;
-
+        
+        preecherDados();
+        
+    }
+        public void peencherDados(){
+        
         jLFornecedor.setText(prod.getFornecedor());
         jLNome.setText(prod.getNome());
         jLDescricao.setText(prod.getDescricao());
@@ -166,7 +171,7 @@ public class Formulario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLVt)
                     .addComponent(jLVTotal))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
@@ -334,4 +339,12 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    private void preecheDados() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void preecherDados() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
